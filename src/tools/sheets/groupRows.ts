@@ -33,7 +33,9 @@ export function register(server: FastMCP) {
           })
         )
         .min(1)
-        .describe('Array of row ranges to group. Each entry is {startRowIndex, endRowIndex} using 1-based row numbers.'),
+        .describe(
+          'Array of row ranges to group. Each entry is {startRowIndex, endRowIndex} using 1-based row numbers.'
+        ),
     }),
     execute: async (args, { log }) => {
       const sheets = await getSheetsClient();
@@ -53,8 +55,8 @@ export function register(server: FastMCP) {
             range: {
               sheetId,
               dimension: 'ROWS',
-              startIndex: startRowIndex - 1,   // 0-based, inclusive
-              endIndex: endRowIndex,            // 0-based, exclusive (= 1-based inclusive)
+              startIndex: startRowIndex - 1, // 0-based, inclusive
+              endIndex: endRowIndex, // 0-based, exclusive (= 1-based inclusive)
             },
           },
         }));

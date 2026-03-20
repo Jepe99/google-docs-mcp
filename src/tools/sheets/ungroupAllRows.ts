@@ -24,7 +24,9 @@ export function register(server: FastMCP) {
         .int()
         .optional()
         .default(500)
-        .describe('Number of rows to clear groups from (default: 500). Set higher if the sheet has more rows.'),
+        .describe(
+          'Number of rows to clear groups from (default: 500). Set higher if the sheet has more rows.'
+        ),
     }),
     execute: async (args, { log }) => {
       const sheets = await getSheetsClient();
