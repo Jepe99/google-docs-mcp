@@ -26,7 +26,10 @@ export function register(server: FastMCP) {
         .describe(
           "1-based character index where the replacement range ends (exclusive). Use readDocument with format='json' to find the correct index."
         ),
-      markdown: z.string().min(1).describe('The markdown content to insert in place of the deleted range.'),
+      markdown: z
+        .string()
+        .min(1)
+        .describe('The markdown content to insert in place of the deleted range.'),
       tabId: z
         .string()
         .optional()
@@ -76,7 +79,9 @@ export function register(server: FastMCP) {
         if (error instanceof UserError || error instanceof MarkdownConversionError) {
           throw error;
         }
-        throw new UserError(`Failed to replace range with markdown: ${error.message || 'Unknown error'}`);
+        throw new UserError(
+          `Failed to replace range with markdown: ${error.message || 'Unknown error'}`
+        );
       }
     },
   });
