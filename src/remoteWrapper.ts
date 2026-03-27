@@ -55,7 +55,9 @@ type AddToolArg = Parameters<FastMCP['addTool']>[0];
 export function wrapServerForRemote(server: FastMCP): void {
   const previousAddTool = server.addTool.bind(server);
 
-  (server as unknown as { addTool: (tool: AddToolArg) => void }).addTool = (toolDef: AddToolArg) => {
+  (server as unknown as { addTool: (tool: AddToolArg) => void }).addTool = (
+    toolDef: AddToolArg
+  ) => {
     const originalExecute = toolDef.execute;
     previousAddTool({
       ...toolDef,

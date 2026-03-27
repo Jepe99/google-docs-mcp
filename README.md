@@ -86,95 +86,95 @@ Cursor will prompt for Google sign-in on first connection. See [Remote Deploymen
 
 ### Google Docs
 
-| Tool | Description |
-| --- | --- |
-| `readDocument` | Read content as plain text, JSON, or markdown |
-| `appendText` | Append text to a document |
-| `insertText` | Insert text at a specific position |
-| `deleteRange` | Remove content by index range |
-| `modifyText` | Replace, prepend, or transform text in a document |
-| `findAndReplace` | Find and replace text across a document |
-| `listTabs` | List all tabs in a multi-tab document |
-| `addTab` | Add a new tab to a document |
-| `renameTab` | Rename a document tab |
-| `replaceDocumentWithMarkdown` | Replace entire document content from markdown |
-| `replaceRangeWithMarkdown` | Replace a specific range with markdown content |
-| `appendMarkdown` | Append markdown-formatted content |
-| `applyTextStyle` | Bold, italic, colors, font size, links |
-| `applyParagraphStyle` | Alignment, spacing, indentation |
-| `insertTable` | Create an empty table |
-| `insertTableWithData` | Create a table pre-filled with data |
-| `insertPageBreak` | Insert page breaks |
-| `insertImage` | Insert images from URLs or local files |
+| Tool                          | Description                                       |
+| ----------------------------- | ------------------------------------------------- |
+| `readDocument`                | Read content as plain text, JSON, or markdown     |
+| `appendText`                  | Append text to a document                         |
+| `insertText`                  | Insert text at a specific position                |
+| `deleteRange`                 | Remove content by index range                     |
+| `modifyText`                  | Replace, prepend, or transform text in a document |
+| `findAndReplace`              | Find and replace text across a document           |
+| `listTabs`                    | List all tabs in a multi-tab document             |
+| `addTab`                      | Add a new tab to a document                       |
+| `renameTab`                   | Rename a document tab                             |
+| `replaceDocumentWithMarkdown` | Replace entire document content from markdown     |
+| `replaceRangeWithMarkdown`    | Replace a specific range with markdown content    |
+| `appendMarkdown`              | Append markdown-formatted content                 |
+| `applyTextStyle`              | Bold, italic, colors, font size, links            |
+| `applyParagraphStyle`         | Alignment, spacing, indentation                   |
+| `insertTable`                 | Create an empty table                             |
+| `insertTableWithData`         | Create a table pre-filled with data               |
+| `insertPageBreak`             | Insert page breaks                                |
+| `insertImage`                 | Insert images from URLs or local files            |
 
 ### Comments
 
-| Tool | Description |
-| --- | --- |
-| `listComments` | View all comments with author and date |
-| `getComment` | Get a specific comment with replies |
-| `addComment` | Create a comment anchored to text |
-| `replyToComment` | Reply to an existing comment |
-| `resolveComment` | Mark a comment as resolved |
-| `deleteComment` | Remove a comment |
+| Tool             | Description                            |
+| ---------------- | -------------------------------------- |
+| `listComments`   | View all comments with author and date |
+| `getComment`     | Get a specific comment with replies    |
+| `addComment`     | Create a comment anchored to text      |
+| `replyToComment` | Reply to an existing comment           |
+| `resolveComment` | Mark a comment as resolved             |
+| `deleteComment`  | Remove a comment                       |
 
 ### Google Sheets
 
-| Tool | Description |
-| --- | --- |
-| `readSpreadsheet` | Read data from a range (A1 notation) |
-| `writeSpreadsheet` | Write data to a range |
-| `batchWrite` | Write to multiple ranges in one call |
-| `appendRows` | Add rows to a sheet |
-| `clearRange` | Clear cell values |
-| `createSpreadsheet` | Create a new spreadsheet |
-| `addSheet` | Add a sheet/tab |
-| `deleteSheet` | Remove a sheet/tab |
-| `duplicateSheet` | Copy a sheet within or across spreadsheets |
-| `renameSheet` | Rename a sheet/tab |
-| `getSpreadsheetInfo` | Get metadata and sheet list |
-| `listSpreadsheets` | Find spreadsheets |
-| `formatCells` | Bold, colors, alignment on cell ranges |
-| `copyFormatting` | Copy formatting from one range to another |
-| `readCellFormat` | Read formatting details of a cell range |
-| `freezeRowsAndColumns` | Pin header rows/columns |
-| `setDropdownValidation` | Add/remove dropdown lists on cells |
-| `setColumnWidths` | Set column widths in pixels |
-| `autoResizeColumns` | Auto-fit column widths to content |
-| `addConditionalFormatting` | Add conditional formatting rules |
-| `groupRows` | Group rows for collapsible sections |
-| `ungroupAllRows` | Remove all row groupings |
-| `insertChart` | Create a chart from data |
-| `deleteChart` | Remove a chart |
+| Tool                       | Description                                |
+| -------------------------- | ------------------------------------------ |
+| `readSpreadsheet`          | Read data from a range (A1 notation)       |
+| `writeSpreadsheet`         | Write data to a range                      |
+| `batchWrite`               | Write to multiple ranges in one call       |
+| `appendRows`               | Add rows to a sheet                        |
+| `clearRange`               | Clear cell values                          |
+| `createSpreadsheet`        | Create a new spreadsheet                   |
+| `addSheet`                 | Add a sheet/tab                            |
+| `deleteSheet`              | Remove a sheet/tab                         |
+| `duplicateSheet`           | Copy a sheet within or across spreadsheets |
+| `renameSheet`              | Rename a sheet/tab                         |
+| `getSpreadsheetInfo`       | Get metadata and sheet list                |
+| `listSpreadsheets`         | Find spreadsheets                          |
+| `formatCells`              | Bold, colors, alignment on cell ranges     |
+| `copyFormatting`           | Copy formatting from one range to another  |
+| `readCellFormat`           | Read formatting details of a cell range    |
+| `freezeRowsAndColumns`     | Pin header rows/columns                    |
+| `setDropdownValidation`    | Add/remove dropdown lists on cells         |
+| `setColumnWidths`          | Set column widths in pixels                |
+| `autoResizeColumns`        | Auto-fit column widths to content          |
+| `addConditionalFormatting` | Add conditional formatting rules           |
+| `groupRows`                | Group rows for collapsible sections        |
+| `ungroupAllRows`           | Remove all row groupings                   |
+| `insertChart`              | Create a chart from data                   |
+| `deleteChart`              | Remove a chart                             |
 
 ### Google Sheets Tables
 
-| Tool | Description |
-| --- | --- |
-| `createTable` | Create a new named table with column types |
-| `listTables` | List all tables in a spreadsheet or sheet |
-| `getTable` | Get detailed table metadata by name or ID |
-| `deleteTable` | Delete a table (optionally clear data) |
+| Tool               | Description                                    |
+| ------------------ | ---------------------------------------------- |
+| `createTable`      | Create a new named table with column types     |
+| `listTables`       | List all tables in a spreadsheet or sheet      |
+| `getTable`         | Get detailed table metadata by name or ID      |
+| `deleteTable`      | Delete a table (optionally clear data)         |
 | `updateTableRange` | Modify table dimensions (add/remove rows/cols) |
-| `appendTableRows` | Append rows to a table (table-aware insertion) |
+| `appendTableRows`  | Append rows to a table (table-aware insertion) |
 
 ### Google Drive
 
-| Tool | Description |
-| --- | --- |
-| `listDocuments` | List documents, optionally filtered by date |
-| `searchDocuments` | Search by name or content |
-| `getDocumentInfo` | Get document metadata |
-| `createDocument` | Create a new document |
-| `createDocumentFromTemplate` | Create from an existing template |
-| `createFolder` | Create a folder |
-| `listFolderContents` | List folder contents |
-| `getFolderInfo` | Get folder metadata |
-| `moveFile` | Move a file to another folder |
-| `copyFile` | Duplicate a file |
-| `renameFile` | Rename a file |
-| `deleteFile` | Move to trash or permanently delete |
-| `downloadFile` | Download a file's content |
+| Tool                         | Description                                 |
+| ---------------------------- | ------------------------------------------- |
+| `listDocuments`              | List documents, optionally filtered by date |
+| `searchDocuments`            | Search by name or content                   |
+| `getDocumentInfo`            | Get document metadata                       |
+| `createDocument`             | Create a new document                       |
+| `createDocumentFromTemplate` | Create from an existing template            |
+| `createFolder`               | Create a folder                             |
+| `listFolderContents`         | List folder contents                        |
+| `getFolderInfo`              | Get folder metadata                         |
+| `moveFile`                   | Move a file to another folder               |
+| `copyFile`                   | Duplicate a file                            |
+| `renameFile`                 | Rename a file                               |
+| `deleteFile`                 | Move to trash or permanently delete         |
+| `downloadFile`               | Download a file's content                   |
 
 ---
 
@@ -228,14 +228,14 @@ Deploy the server centrally on Google Cloud Run (or any container host) so your 
 
 ### Environment Variables
 
-| Variable | Description |
-| --- | --- |
-| `MCP_TRANSPORT` | Set to `httpStream` to enable remote mode (default: `stdio`) |
-| `BASE_URL` | Public URL of the deployed server (required for OAuth redirects) |
-| `GOOGLE_CLIENT_ID` | OAuth client ID (Web application type) |
-| `GOOGLE_CLIENT_SECRET` | OAuth client secret |
-| `ALLOWED_DOMAINS` | Comma-separated list of allowed Google Workspace domains (optional) |
-| `PORT` | HTTP port (default: `8080`) |
+| Variable               | Description                                                         |
+| ---------------------- | ------------------------------------------------------------------- |
+| `MCP_TRANSPORT`        | Set to `httpStream` to enable remote mode (default: `stdio`)        |
+| `BASE_URL`             | Public URL of the deployed server (required for OAuth redirects)    |
+| `GOOGLE_CLIENT_ID`     | OAuth client ID (Web application type)                              |
+| `GOOGLE_CLIENT_SECRET` | OAuth client secret                                                 |
+| `ALLOWED_DOMAINS`      | Comma-separated list of allowed Google Workspace domains (optional) |
+| `PORT`                 | HTTP port (default: `8080`)                                         |
 
 ### Setup
 

@@ -13,7 +13,8 @@ const TEXTS = {
     copy: 'Copy',
     copied: 'Copied!',
     tools: 'tools available',
-    footer: 'Powered by <a href="https://github.com/a-bonus/google-docs-mcp">a-bonus/google-docs-mcp</a>',
+    footer:
+      'Powered by <a href="https://github.com/a-bonus/google-docs-mcp">a-bonus/google-docs-mcp</a>',
   },
   cs: {
     title: 'Google Docs MCP Server',
@@ -27,7 +28,8 @@ const TEXTS = {
     copy: 'Kopírovat',
     copied: 'Zkopírováno!',
     tools: 'dostupných nástrojů',
-    footer: 'Poháněno <a href="https://github.com/a-bonus/google-docs-mcp">a-bonus/google-docs-mcp</a>',
+    footer:
+      'Poháněno <a href="https://github.com/a-bonus/google-docs-mcp">a-bonus/google-docs-mcp</a>',
   },
 };
 
@@ -41,7 +43,7 @@ function renderPage(lang: keyof typeof TEXTS, mcpUrl: string, toolCount: number)
   const configJson = JSON.stringify(
     { mcpServers: { 'google-docs': { type: 'streamableHttp', url: mcpUrl } } },
     null,
-    2,
+    2
   );
 
   return `<!DOCTYPE html>
@@ -81,17 +83,17 @@ function renderPage(lang: keyof typeof TEXTS, mcpUrl: string, toolCount: number)
     </ol>
 
     <h2>${t.config}</h2>
-    <div class="code-block" id="config"><button class="copy-btn" onclick="copyConfig()">${t.copy}</button>${escapeHtml(configJson)}</div>
+    <div class="code-block"><button class="copy-btn" onclick="copyConfig()">${t.copy}</button><code id="config">${escapeHtml(configJson)}</code></div>
 
     <p class="footer">${t.footer}</p>
   </div>
   <script>
+    var _cfg = ${JSON.stringify(configJson)};
     function copyConfig() {
-      const text = document.getElementById('config').textContent.replace('${t.copy}', '').replace('${t.copied}', '').trim();
-      navigator.clipboard.writeText(text);
-      const btn = document.querySelector('.copy-btn');
+      navigator.clipboard.writeText(_cfg);
+      var btn = document.querySelector('.copy-btn');
       btn.textContent = '${t.copied}';
-      setTimeout(() => btn.textContent = '${t.copy}', 2000);
+      setTimeout(function() { btn.textContent = '${t.copy}'; }, 2000);
     }
   </script>
 </body>
