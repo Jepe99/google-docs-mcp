@@ -22,6 +22,7 @@ import {
 import { initializeGoogleClient } from './clients.js';
 import { registerAllTools } from './tools/index.js';
 import { wrapServerForRemote } from './remoteWrapper.js';
+import { registerLandingPage } from './landingPage.js';
 import { logger } from './logger.js';
 
 // --- Auth subcommand ---
@@ -78,6 +79,7 @@ registerAllTools(server);
 try {
   if (isRemote) {
     logger.info('Starting in remote mode (httpStream + MCP OAuth 2.1)...');
+    registerLandingPage(server, registeredTools.length);
 
     const port = parseInt(process.env.PORT || '8080');
     await server.start({
