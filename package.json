@@ -31,7 +31,7 @@
   "license": "ISC",
   "description": "MCP server for Google Docs, Sheets, and Drive",
   "dependencies": {
-    "fastmcp": "^3.24.0",
+    "fastmcp": "^3.34.0",
     "google-auth-library": "^10.5.0",
     "googleapis": "^171.4.0",
     "markdown-it": "^14.1.0",

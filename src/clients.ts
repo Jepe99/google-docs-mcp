@@ -4,6 +4,7 @@ import { UserError } from 'fastmcp';
 import { OAuth2Client } from 'google-auth-library';
 import { authorize } from './auth.js';
 import { logger } from './logger.js';
+import { requestClients } from './remoteWrapper.js';
 
 let authClient: OAuth2Client | null = null;
 let googleDocs: docs_v1.Docs | null = null;
@@ -57,6 +58,8 @@ export async function initializeGoogleClient() {
 
 // --- Helper to get Docs client within tools ---
 export async function getDocsClient() {
+  const remote = requestClients.getStore();
+  if (remote) return remote.docs;
   const { googleDocs: docs } = await initializeGoogleClient();
   if (!docs) {
     throw new UserError(
@@ -68,6 +71,8 @@ export async function getDocsClient() {
 
 // --- Helper to get Drive client within tools ---
 export async function getDriveClient() {
+  const remote = requestClients.getStore();
+  if (remote) return remote.drive;
   const { googleDrive: drive } = await initializeGoogleClient();
   if (!drive) {
     throw new UserError(
@@ -79,6 +84,8 @@ export async function getDriveClient() {
 
 // --- Helper to get Sheets client within tools ---
 export async function getSheetsClient() {
+  const remote = requestClients.getStore();
+  if (remote) return remote.sheets;
   const { googleSheets: sheets } = await initializeGoogleClient();
   if (!sheets) {
     throw new UserError(
@@ -90,6 +97,8 @@ export async function getSheetsClient() {
 
 // --- Helper to get Auth client for direct API usage ---
 export async function getAuthClient() {
+  const remote = requestClients.getStore();
+  if (remote) return remote.auth;
   const { authClient: client } = await initializeGoogleClient();
   if (!client) {
     throw new UserError(
@@ -101,6 +110,8 @@ export async function getAuthClient() {
 
 // --- Helper to get Script client within tools ---
 export async function getScriptClient() {
+  const remote = requestClients.getStore();
+  if (remote) return remote.script;
   const { googleScript: script } = await initializeGoogleClient();
   if (!script) {
     throw new UserError(
