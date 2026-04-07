@@ -43,12 +43,24 @@ if (process.argv[2] === 'auth') {
 
 // --- Server startup ---
 
-process.on('uncaughtException', (error) => {
+process.on('uncaughtException', (error: NodeJS.ErrnoException) => {
   logger.error('Uncaught Exception:', error);
+  if (error.code === 'EPIPE' || error.code === 'ERR_STREAM_DESTROYED') {
+    process.exit(1);
+  }
 });
 
 process.on('unhandledRejection', (reason, _promise) => {
   logger.error('Unhandled Promise Rejection:', reason);
+});
+
+process.stdin.on('end', () => {
+  logger.info('stdin closed — MCP host disconnected. Shutting down.');
+  process.exit(0);
+});
+
+process.stdin.on('error', () => {
+  process.exit(0);
 });
 
 const isRemote = process.env.MCP_TRANSPORT === 'httpStream';
